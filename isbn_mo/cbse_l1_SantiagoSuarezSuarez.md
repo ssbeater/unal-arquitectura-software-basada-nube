@@ -33,26 +33,27 @@ Santiago Suarez Suarez
 
 
 ```
-isbn_mo/
-├───controllers/
-│   └───task_controller.py
-├───models/
-│   └───task.py
-├───repositories/
-│   └───task_repository.py
+d1-isbn_mo/
 ├───seed/
 │   └───db-seed.py
-├───services/
-│   └───task_service.py
-├───static/
-│   └───styles.css
-├───templates/
-│   └───index.html
+├───src/
+│   ├───controllers/
+│   │   └───task_controller.py
+│   ├───models/
+│   │   └───task.py
+│   ├───repositories/
+│   │   └───task_repository.py
+│   ├───services/
+│   │   └───task_service.py
+│   ├───static/
+│   │   └───styles.css
+│   ├───templates/
+│   │   └───index.html
+│   └───app.py
 ├───.dockerignore
 ├───.env
 ├───.env.template
 ├───.gitignore
-├───app.py
 ├───docker-compose.dev.yml
 ├───docker-compose.yml
 ├───Dockerfile
