@@ -1,11 +1,48 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>ISBN</title>
+    <title>Tareas</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <script>
+        function showUpdateForm(taskId, taskName, taskDescription) {
+            document.getElementById('taskId').value = taskId;
+            document.getElementById('updateName').value = taskName;
+            document.getElementById('updateDescription').value = taskDescription;
+        }
+
+        async function handleUpdateFormSubmit(event) {
+            event.preventDefault();
+
+            console.log("comenzando")
+            const taskId = document.getElementById('taskId').value;
+            const name = document.getElementById('updateName').value;
+            const description = document.getElementById('updateDescription').value;
+
+            const response = await fetch(`/tasks/${taskId}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name, description })
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                location.reload();
+            } else if (response.status === 404) {
+                alert(data.message)
+            } else {
+                alert('Error al actualizar la tarea');
+            }
+        }
+    </script>
 </head>
+
 <body>
-    <h1>Tarea</h1>
+    <h1>Crear Tarea</h1>
+    <!-- Formulario para crear una nueva tarea -->
     <form method="POST" action="/tasks">
         <label for="name">Nombre:</label><br>
         <input type="text" id="name" name="name" required><br>
@@ -13,5 +50,20 @@
         <textarea id="description" name="description"></textarea><br>
         <button type="submit">Crear</button>
     </form>
+
+    <h1>Actualizar Tarea</h1>
+    <!-- Formulario para actualizar una tarea existente -->
+    <div id="updateForm">
+        <form onsubmit="handleUpdateFormSubmit(event)">
+            <label for="taskId">ID:</label><br>
+            <input type="number" id="taskId" required><br>
+            <label for="updateName">Nombre:</label><br>
+            <input type="text" id="updateName"><br>
+            <label for="updateDescription">Descripción:</label><br>
+            <textarea id="updateDescription"></textarea><br>
+            <button type="submit">Actualizar</button>
+        </form>
+    </div>
 </body>
+
 </html>

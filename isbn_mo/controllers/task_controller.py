@@ -16,6 +16,20 @@ def create_task():
     TaskService.create_task(name, description)
     return redirect(url_for('tasks.index'))
 
+@task_blueprint.route('/tasks/<taskId>', methods=['PUT'])
+def update_task(taskId):
+    data = request.json
+    task_id = int(taskId)
+    name = data.get('name')
+    description = data.get('description')
+
+    updated_task = TaskService.update_task(task_id, name, description)
+
+    if updated_task is None:
+        return jsonify({'message': 'Task not found'}), 404
+
+    return jsonify({'message': 'Task updated'}), 200
+
 @task_blueprint.route('/')
 def index():
     return render_template('index.html')

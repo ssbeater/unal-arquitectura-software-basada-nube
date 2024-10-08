@@ -7,7 +7,6 @@ from controllers.task_controller import *
 load_dotenv()
 
 dbUri = os.getenv("DB_URI")
-print(dbUri)
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = dbUri
