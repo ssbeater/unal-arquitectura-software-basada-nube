@@ -24,7 +24,7 @@
     `python .\seed\db-seed.py`
 5. Run app
 
-    `python .\app.py`
+    `python .\src\app.py`
 6. Visit [localhost:4200](http://127.0.0.1:4200/)
 
 ### Run App in Docker
