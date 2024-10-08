@@ -8,3 +8,9 @@ dist/
 htmlcov/
 .tox/
 docs/_build/
+
+# docker-compose volumes
+mysql
+
+# enviroment variables
+.env
