@@ -9,33 +9,28 @@ Santiago Suarez Suarez
 ---
 
 # Flujo de trabajo
-![image](./assets/flow.png)
+<img src="./assets/flow.png" alt="workflow" width="600"/>
 
 ## Requerimientos
-
-![image](./assets/requerimientos.png)
+<img src="./assets/requerimientos.png" alt="requirements" width="600"/>
 
 ## Diseño
-
-![image](./assets/diseno.png)
+<img src="./assets/diseno.png" alt="design" width="600"/>
 
 ### Arquitectura del proyecto
+<img src="./assets/arquitectura.png" alt="architecture" width="500"/>
 
-<img src="./assets/arquitectura.png" alt="drawing" width="500"/>
-
-### Patron repositorio
-
-<img src="./assets/patron-repositorio.png" alt="drawing" width="600"/>
+### Patrón repositorio
+<img src="./assets/patron-repositorio.png" alt="repository-pattern" width="600"/>
 
 ## Implementación
+<img src="./assets/implementacion.png" alt="implementation" width="600"/>
 
-![image](./assets/implementacion.png)
-
-### Url del proyecto en Github
-
+### URL del proyecto en GitHub
 [Repositorio del proyecto](https://github.com/ssbeater/unal-arquitectura-software-basada-nube/tree/main/isbn_mo)
 
 ### Estructura del proyecto
+
 
 ```
 isbn_mo/
@@ -90,7 +85,6 @@ services:
       - '4200:4200'
     depends_on:
       - isbn_db
-
 ```
 
 ## Testing
@@ -109,7 +103,7 @@ services:
 
 ## Evolución
 
-![image](./assets/evolucion.png)
+<img src="./assets/evolucion.png" alt="drawing" width="600"/>
 
 ### Evidencia de cambios
 
