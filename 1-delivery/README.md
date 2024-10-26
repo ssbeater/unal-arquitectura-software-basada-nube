@@ -1,4 +1,4 @@
-# Delivery 1 - Software Engineering - ISBN_MO
+# Software Engineering - ISBN_MO
 
 ## Running App
 
