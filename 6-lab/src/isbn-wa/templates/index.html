@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ISBN</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Registro</h1>
+    <form method="POST" action="/record">
+        <label for="user_name">Nombre del usuario:</label><br>
+        <input type="text" id="user_name" name="user_name" required><br>
+        <label for="user_name">Correo electrónico del usuario:</label><br>
+        <input type="text" id="user_name" name="user_email"></input><br>
+        <label for="task_id">ID de la tarea:</label><br>
+        <input type="text" id="task_id" name="task_id"></input><br>
+        <label for="task_name">Nombre de la tarea:</label><br>
+        <input type="text" id="task_name" name="task_name" required></input><br>
+        <label for="task_description">Descripción de la tarea:</label><br>
+        <input type="text" id="task_description" name="task_description"></input><br>
+        <button type="submit">Crear</button>
+    </form>
+</body>
+</html>
