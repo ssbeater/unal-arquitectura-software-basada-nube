@@ -26,3 +26,24 @@ module "Firestore" {
   region = var.region
   depends_on = [ module.APIs ]
 }
+
+module "docker_commands" {
+  source = "./modules/DockerCommands"
+  registry_address = var.registry_address
+  depends_on = [ module.Registry ]
+}
+
+module "CloudFunction" {
+  source = "./modules/CloudFunction"
+  region = var.region
+  project_id = var.google_project_id
+  depends_on = [ module.APIs ]
+}
+
+module "UserService" {
+    source = "./modules/UserService"
+    region = var.region
+    registry_address = var.registry_address
+    db_host = var.users_db_host
+    depends_on = [ module.APIs, module.docker_commands ]
+}

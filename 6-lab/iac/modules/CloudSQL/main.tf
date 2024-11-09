@@ -12,7 +12,11 @@ resource "google_sql_database_instance" "isbn_users_db" {
     }
 
     ip_configuration {
-      ipv4_enabled = true                         # Habilitar IP pública para la instancia
+      ipv4_enabled = true
+      authorized_networks {
+        name = "allow-all"
+        value = "0.0.0.0/0"
+      }
     }
 
     availability_type = "ZONAL"                # Configuración para disponibilidad en una sola zona
